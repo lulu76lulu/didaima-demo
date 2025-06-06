@@ -20,8 +20,53 @@
 1. 锁定组件
 1. 网格线
 
-## 在线 DEMO
-* [预览入口（Github）不翻墙可能速度慢](https://woai3c.github.io/visual-drag-demo)
+# didaima-demo
+
+## Lx-Design
+
+### 项目描述：
+
+Lx-Design低代码平台是一个高效的开发工具，旨在简化和加速应用开发过程。平台基于Vue2、Vuex、TypeScript、Webpack、Ant Design、Echarts等技术栈，提供直观的可视化编辑器，支持组件拖拽、布局嵌套、属性配置等功能，帮助开发者快速构建和配置应用界面。同时，平台内置图表组件，支持动态数据源绑定，能够生成各种类型的可配置图表，提升数据展示和交互体验。
+
+主要技术栈：Vue2 + Vuex + TypeScript + webpack + ant-design-vue4 + echarts 
+
+### 具体功能实现阐述：
+低代码平台设计成三分布局，物料区、画布区、编辑区，物料区包括封装完成的组件，画布区支持对页面的布局设计，编辑区设置组件属性。
+
+1. **shema设计**：对于不同组件，shema设计有所不同
+```javascript
+{
+    component: 'v-text', // 组件名称，需要提前注册到 Vue
+    label: '文字', // 左侧组件列表中显示的名字
+    uuid:'',//页面进行差量存储，redo undo寻找的组件标志
+    propValue: '文字', // 组件所使用的值
+    icon: 'el-icon-edit', // 左侧组件列表中显示的名字
+    animations: [], // 动画列表
+    events: {}, // 事件列表
+    style: { // 组件样式
+        width: 200,
+        height: 33,
+        fontSize: 14,
+        fontWeight: 500,
+        lineHeight: '',
+        letterSpacing: 0,
+        textAlign: '',
+        color: '',
+    },
+}
+```
+
+2. **组件拖拽**：组件拖拽分为两个部分
+
+组件拖拽到画布区：
+
+为物料区添加dragapi-draggble属性，实现拖动
+
+组件在画布区拖拽：
+
+计算鼠标位置
+
+
 
 ## 开发
 ### 安装
